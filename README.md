@@ -1,2 +1,1 @@
-# Smart-Logistics-System
 An OOP-based Smart Logistics Simulation System evolved from a school project, modeling real-world cargo management with weight/volume constraints, specialized containers, optimization algorithms, and automated reporting.
