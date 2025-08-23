@@ -1,4 +1,4 @@
-from classes_2 import Item, Suitcase, CargoHold
+from  classes import Item, Suitcase, CargoHold
 
 # ----------Start Test Part 1------------------
 book = Item("ABC Book", 2)
