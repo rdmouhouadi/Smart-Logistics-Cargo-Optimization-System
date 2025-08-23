@@ -24,7 +24,7 @@ class Item(Weighable):
         '''returns attribute (..kg)'''
         return f"{self.__name} ({self.__weight} kg)"
 
-# Part 2
+# Part 2-5
 class Suitcase(Weighable):
 
     def __init__(self, max_weight):
@@ -62,7 +62,8 @@ class Suitcase(Weighable):
         for item in self.__items:
             total_weight += item.weight()
         return total_weight
-
+        
+    #-------Part 5 ------------------------------------
     def heaviest_item(self):
         '''returns the or one of the heaviest items in the Suitcase'''
 
@@ -77,3 +78,46 @@ class Suitcase(Weighable):
                 heaviest = item # updates with the position of the heaviest item found
 
         return heaviest
+
+#Part 6-7 
+class CargoHold:
+    
+    #-------Part 6 ------------------------------------
+    def __init__(self, max_weight):
+        
+        #Maximum weight capavity of the Cargo Hold
+        self.__max_weight = max_weight
+
+        #List  of all the suitcases stored
+        self.__suitcases = []
+
+    def add_suitcase(self, suitcase):
+        '''Adds a suitcase if the combined weight does not exceed the cargo hold's max weight'''
+
+        current_weight = 0
+        for s in self.__suitcases:
+            current_weight += s.weight()
+        
+        if current_weight + suitcase.weight() <= self.__max_weight:
+            self.__suitcases.append(suitcase)
+
+    def __str__(self):
+        '''Returns the format: "X suitcase, space for y kg'''
+        count = len(self.__suitcases)
+
+        used_weight = 0
+        for s in self.__suitcases:
+            used_weight += s.weight()
+
+        space_left = self.__max_weight - used_weight
+
+        if count ==1:
+            return f"1 suitcase, space for {space_left} kg"
+        else:
+            return f"{count} suitcases, space for {space_left} kg"
+        
+    #-------Part 7 ------------------------------------
+    def print_items (self):
+        '''print out all the items in all the suitcases within the cargo hold'''
+        for suitcase in self.__suitcases:
+            suitcase.print_items()

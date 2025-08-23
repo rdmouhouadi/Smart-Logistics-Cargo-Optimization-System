@@ -1,4 +1,4 @@
-from classes_2 import Item, Suitcase
+from classes_2 import Item, Suitcase, CargoHold
 
 # ----------Start Test Part 1------------------
 book = Item("ABC Book", 2)
@@ -43,3 +43,26 @@ print(f"Combined weight: {combined_weight} kg")
 heaviest = suitcase.heaviest_item()
 print(f"The heavies item: {heaviest}")
 # ----------End Test Part 5-----------------------
+
+# ----------Start Test Part 6-----------------------
+cargo_hold = CargoHold(1000)
+print(cargo_hold)
+
+adas_suitcase = Suitcase(10)
+adas_suitcase.add_item(book)
+adas_suitcase.add_item(phone)
+
+peters_suitcase = Suitcase(10)
+peters_suitcase.add_item(brick)
+
+cargo_hold.add_suitcase(adas_suitcase)
+print(cargo_hold)
+
+cargo_hold.add_suitcase(peters_suitcase)
+print(cargo_hold)
+# ----------End Test Part 6-----------------------
+
+# ----------Start Test Part 7-----------------------
+print("The suitcases in the cargo hold contain the following items:")
+cargo_hold.print_items()
+# ----------End Test Part 7-----------------------
