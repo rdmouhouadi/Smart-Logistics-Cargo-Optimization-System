@@ -1,5 +1,5 @@
 '''
-My Reasonning:
+My logic:
                 - Item: a single object
                 - Suitcase and CargoHold: items with the ability of storing other items
 '''
@@ -13,22 +13,21 @@ class Item:
         self.__weight = weight
 
     def name(self):
-        '''a method that returns the item name'''
+        '''returns the item name'''
         return self.__name
 
     def weight(self):
-        '''a method that returns the item weight'''
+        '''returns the item weight'''
         return self.__weight
 
     def __str__(self):
-        '''returns attribute (..kg)'''
+        '''returns the following format: 'item's name' 'item's weight' kg'''
         return f"{self.__name} ({self.__weight} kg)"
 
 # Part 2, 3, 4, 5
 class Suitcase(Item):
 
     def __init__(self, max_weight):
-        # suitcases are unnamed items that contain other items
         super().__init__("suitcase", 0)
 
         # Maximum weight of the suitcase
@@ -38,7 +37,7 @@ class Suitcase(Item):
         self.__items = []
 
     def add_item(self, item):
-        '''This function adds an item to the suitcase if total weight doesn't exceed the maximum'''
+        '''dds an item to the suitcase if total weight doesn't exceed the maximum weight'''
         current_weight = self.weight()
         if current_weight + item.weight() <= self.__max_weight:
             self.__items.append(item)
@@ -73,9 +72,9 @@ class Suitcase(Item):
 
         # assume the first item as the heaviest
         heaviest = self.__items[0]
-        for item in self.__items:
+        for item in self.__items:                   # loops to find the item position of the actual heaviest item
             if item.weight() > heaviest.weight():
-                heaviest = item
+                heaviest = item     
         return heaviest
 
 # Part 6 & 7
