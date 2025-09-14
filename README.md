@@ -1,6 +1,6 @@
 # 🚢 Smart Logistics Cargo System  
 
-A sophisticated **Object-Oriented Programming (OOP)** based logistics simulation system that models real-world cargo management scenarios.  
+An **Object-Oriented Programming (OOP)** based logistics simulation system that models real-world cargo management scenarios.  
 
 ## 🔍 Problem Statement / Background (Situation)  
 Traditional logistics systems must handle **weight and volume constraints**, specialized container types, and reporting requirements. Simulating these complexities is valuable for both **academic learning** and potential **business applications**, but requires structured OOP design and optimization techniques.  
